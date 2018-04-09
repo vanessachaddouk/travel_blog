@@ -7,6 +7,7 @@ SITENAME = "Le blog voyage d'Elida et Florian"
 SITEURL = ''
 
 PATH = 'content'
+PAGE_PATHS = ['pages']
 
 TIMEZONE = 'Europe/Paris'
 
@@ -35,14 +36,15 @@ I18N_GETTEXT_NEWSTYLE = True
 TIMEZONE = 'Europe/Paris'
 DEFAULT_DATE_FORMAT = '%A %d %b %Y'
 I18N_TEMPLATES_LANG = 'fr_FR'
-DEFAULT_LANG = 'fr'
 LOCALE = 'fr_FR'
 
 
-# plugin for images
+# logo path, needs to be stored in PATH Setting
+LOGO = '/images/logo.svg'
+
+# plugin for images, tags, and more
 PLUGIN_PATHS = ['plugins']
-PLUGINS = ['liquid_tags.img',
-	"pelican-cover-image", 
+PLUGINS = ['liquid_tags.img', 
 		"representative_image", 'i18n_subsites', 'tipue_search']
 
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}

@@ -296,7 +296,7 @@ figure figcaption {
   position: relative;
   width: 93%;
   margin: 0 auto;
-  padding: 4em 0;
+  padding: 1em 0;
   clear: both;
 }
 @media screen and (max-width: 768px) {
