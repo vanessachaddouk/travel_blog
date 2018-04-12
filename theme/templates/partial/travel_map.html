@@ -9,9 +9,9 @@ integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgB
 crossorigin=""></script>
 	<script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
 	<script type="">
-		var mymap = new L.Map('mapid', {
-		    center: new L.LatLng(15., 2.3522),
-		    zoom: 2});
+		var mymap = new L.Map('mapid', {center: new L.LatLng(15., 2.3522),
+										zoom: 2,
+										worldCopyJump: true});
 		mymap.zoomControl.setPosition('topright');
 		var layer = new L.StamenTileLayer("watercolor");
 		mymap.addLayer(layer);
