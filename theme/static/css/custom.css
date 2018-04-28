@@ -152,6 +152,7 @@ h3, h4, h5, h6 {
 
 .responsive-image img {
   max-width: 100%;
+  width: 100%;
 }
 
 .container.float-left {
@@ -165,4 +166,10 @@ h3, h4, h5, h6 {
   padding-right: 0px;
   padding-bottom: 15px;
   padding-left: 15px;
+}
+
+.article-content {
+  max-width: 670px;
+  margin-right: auto;
+  margin-left: 0;
 }
