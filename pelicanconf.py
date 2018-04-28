@@ -58,6 +58,7 @@ DISPLAY_CATEGORIES_ON_MENU = False
 
 MENUITEMS = [
   ('Archive', 'archives.html'),
+  ('Flux RSS', 'feeds/all.atom.xml')
 ]
 
 DIRECT_TEMPLATES = [
