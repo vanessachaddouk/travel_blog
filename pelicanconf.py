@@ -45,7 +45,8 @@ LOGO = '/images/logo.svg'
 # plugin for images, tags, and more
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['liquid_tags.img', 
-		"representative_image", 'i18n_subsites', 'tipue_search']
+		   'liquid_tags.figure',
+		   'representative_image', 'i18n_subsites', 'tipue_search']
 
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 STATIC_PATHS = ['images']
