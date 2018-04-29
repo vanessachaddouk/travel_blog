@@ -15,8 +15,6 @@
         {% for cat, null in categories|sort %}
             <li{% if cat == category %} class="fh5co-active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
         {% endfor %}
-    {% elif categories|length > 0 %}
-        <li{% if page_name == 'categories' %} class="fh5co-active"{% endif %}><a href="{{ SITEURL }}/categories.html">{{ _('Categories') }}</a></li>
     {% endif %}
 
     <!-- tags -->
