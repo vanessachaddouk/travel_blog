@@ -54,13 +54,18 @@ STATIC_PATHS = ['images']
 # debugging plugins
 LOAD_CONTENT_CACHE = False
 
+# navigation and content options
+DISPLAY_PAGES_ON_MENU = True
+DISPLAY_PAGES_ON_HOME = False
 DISPLAY_CATEGORIES_ON_MENU = False
+DISPLAY_TAGS_ON_MENU = False
 
 MENUITEMS = [
   ('Archive', 'archives.html'),
   ('Flux RSS', 'feeds/all.atom.xml')
 ]
 
+# this generate all main pages from the site, such as the index
 DIRECT_TEMPLATES = [
   'index',
   'tags',
@@ -68,5 +73,4 @@ DIRECT_TEMPLATES = [
   'authors',
   'archives',
   'search', # needed for tipue_search plugin
-  'contact' # needed for the contact form
 ]
