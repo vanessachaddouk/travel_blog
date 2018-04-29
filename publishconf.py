@@ -20,5 +20,6 @@ DELETE_OUTPUT_DIRECTORY = True
 
 # Following items are often useful when publishing
 
-#DISQUS_SITENAME = ""
+DISQUS_SHORTNAME = "le-blog-voyage-delida-et-florian"
+DISQUS_ON_PAGES = False
 #GOOGLE_ANALYTICS = ""
