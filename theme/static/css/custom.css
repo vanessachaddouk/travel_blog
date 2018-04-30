@@ -168,5 +168,17 @@ h3, h4, h5, h6 {
 .article-content {
   max-width: 670px;
   margin-right: auto;
-  margin-left: 0;
+  margin-left: auto;
+  float:left;
+}
+
+.page-content {
+  max-width: 670px;
+  margin-right: auto;
+  margin-left: auto;
+  float:left;
+}
+
+.fh5co-footer {
+  clear: both;
 }
