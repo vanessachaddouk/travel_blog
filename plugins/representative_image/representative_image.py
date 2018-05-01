@@ -3,9 +3,12 @@ from pelican import signals
 from pelican.contents import Article, Draft, Page
 from pelican.generators import ArticlesGenerator
 from bs4 import BeautifulSoup
+import logging
 
+logger = logging.getLogger(__name__)
 
 def images_extraction(instance):
+    logger.debug('[representative image] running for {}'.format(instance))
     representativeImage = None
     if type(instance) in (Article, Draft, Page):
         if 'image' in instance.metadata:
@@ -32,7 +35,8 @@ def images_extraction(instance):
 
         # Set the attribute to content instance
         instance.featured_image = representativeImage
-
+    logger.debug('[representative image] setting {}'.format(representativeImage))
+    
 
 def run_plugin(generators):
     for generator in generators:
@@ -44,7 +48,5 @@ def run_plugin(generators):
 def register():
     try:
         signals.all_generators_finalized.connect(run_plugin)
-    except AttributeError:
-        # NOTE: This results in #314 so shouldn't really be relied on
-        # https://github.com/getpelican/pelican-plugins/issues/314
-        signals.content_object_init.connect(images_extraction)
+    except Exception as e:
+        logger.exception('Representative image Plugin failed to execute: {}'.format(pprint.pformat(e)))
