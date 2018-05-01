@@ -45,8 +45,11 @@ LOGO = '/images/logo.svg'
 # plugin for images, tags, and more
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['liquid_tags.img', 
-		   'liquid_tags.figure',
-		   'representative_image', 'i18n_subsites', 'tipue_search']
+		       'liquid_tags.figure', 
+           'i18n_subsites', 
+           'tipue_search',
+           'photos',
+           'representative_image']
 
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 STATIC_PATHS = ['images']
@@ -74,3 +77,19 @@ DIRECT_TEMPLATES = [
   'archives',
   'search', # needed for tipue_search plugin
 ]
+
+# photos plugin (for galleries)
+# see https://github.com/getpelican/pelican-plugins/tree/master/photos
+PHOTO_LIBRARY = 'photo_galleries'
+PHOTO_GALLERY = (1024, 768, 80)
+PHOTO_ARTICLE = (760, 506, 80)
+PHOTO_THUMB = (192, 144, 60)
+PHOTO_SQUARE_THUMB = True
+PHOTO_RESIZE_JOBS = 5
+PHOTO_WATERMARK = True
+PHOTO_WATERMARK_TEXT = SITENAME
+PHOTO_WATERMARK_IMG = ''
+PHOTO_EXIF_KEEP = True
+PHOTO_EXIF_REMOVE_GPS = True
+PHOTO_EXIF_COPYRIGHT = 'CC-BY-NC-ND'
+PHOTO_EXIF_AUTOROTATE = True

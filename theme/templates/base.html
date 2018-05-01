@@ -60,6 +60,10 @@
         <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS">
     {% endif %}
 
+    <!-- Photos Pelican plugin clickable galleries-->
+    {% if (article and article.photo_gallery) or (articles_page and articles_page.object_list[0].photo_gallery) %}
+        <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/magnific-popup.css">
+    {% endif %}
 
     </head>
     <body>
@@ -109,6 +113,33 @@
 
     <!-- MAIN JS -->
     <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/main.js"></script>
+    <!-- Pelican Photos gallery plugin JS -->
+    {% if (article and article.photo_gallery) or (articles_page and articles_page.object_list[0].photo_gallery) %}
+
+
+        <!-- Magnific Popup core JS file -->
+        <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/magnific-popup.js"></script>
+        <script>
+        $('.gallery').magnificPopup({
+            delegate: 'a',
+            type: 'image',
+            gallery: {
+                enabled: true,
+                navigateByImgClick: true,
+                preload: [1,2]
+            },
+            image: {
+                titleSrc: function(item) {
+                    if (item.el.attr('caption') && item.el.attr('exif')) {
+                        return (item.el.attr('caption').replace(/\\n/g, '<br />') +
+                            '<small>' + item.el.attr('title') + ' - ' + item.el.attr('exif') + '</small>');
+                    }
+                return item.el.attr('title') + '<small>' + item.el.attr('exif') + '</small>';
+            } }
+        });
+        </script>
+    {% endif %}
+
     </body>
 </html>
 
