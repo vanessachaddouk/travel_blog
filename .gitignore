@@ -106,3 +106,7 @@ output/
 # Pelican themes and plugins
 pelican-themes/
 pelican-plugins/
+
+# Van's files
+pelican.pid
+srv.pid
